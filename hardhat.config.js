@@ -1,4 +1,6 @@
 require("@nomiclabs/hardhat-waffle");
+require("solidity-coverage");
+require("@nomiclabs/hardhat-etherscan");
 
 // This is a sample Hardhat task. To learn how to create your own go to
 // https://hardhat.org/guides/create-task.html
@@ -18,18 +20,35 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
  */
 module.exports = {
   solidity: {
-    version: "0.8.0",
-    settings: {
-      optimizer: {
-        enabled: true,
-        runs: 200,
+    compilers: [
+      {
+        version: "0.5.7",
       },
-    },
-    networks: {
-      ropsten: {
-        url: "",
-        accounts: [""],
+      {
+        version: "0.8.0",
       },
+      {
+        version: "0.6.12",
+      },
+    ],
+  },
+  settings: {
+    optimizer: {
+      enabled: true,
+      runs: 200,
     },
+  },
+  networks: {
+    ropsten: {
+      url: "https://ropsten.infura.io/v3/6c17c4a175c64100b9d624c48f8e0a80",
+      accounts: [
+        "96bd1a183b1a8452ccd3f3aacdeed094551c06b5185919521ef2be7f5621206b",
+      ],
+    },
+  },
+  etherscan: {
+    // Your API key for Etherscan
+    // Obtain one at https://etherscan.io/
+    apiKey: "C493V9JU8SAN8HFZTHKC6G8ZT6BYYPR1P7",
   },
 };

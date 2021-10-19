@@ -20,7 +20,7 @@ contract USElection is Ownable {
     }
     
     event LogStateResult(uint8 winner, uint8 stateSeats, string state);
-    event LogElectionEnded(uint winner);
+    event LogElectionEnded2(uint winner);
     
     modifier onlyActiveElection() {
         require(!electionEnded, "The election has ended already");
@@ -58,7 +58,7 @@ contract USElection is Ownable {
     
     function endElection() public onlyOwner onlyActiveElection {
         electionEnded = true;
-        emit LogElectionEnded(currentLeader());
+        emit LogElectionEnded2(currentLeader());
     }
    
 }

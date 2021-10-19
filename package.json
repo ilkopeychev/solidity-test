@@ -1,20 +1,26 @@
 {
-  "name": "hardhetsetup",
+  "name": "hardhat-test",
   "version": "1.0.0",
-  "description": "",
+  "description": "hardhat-test",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "test"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "hardhat-test"
+  },
+  "author": "Ilko",
   "license": "ISC",
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.2",
+    "@nomiclabs/hardhat-etherscan": "^2.1.6",
     "@nomiclabs/hardhat-waffle": "^2.0.1",
     "chai": "^4.3.4",
     "ethereum-waffle": "^3.4.0",
     "ethers": "^5.4.7",
-    "hardhat": "^2.6.5"
+    "hardhat": "^2.6.5",
+    "solidity-coverage": "^0.7.17"
   },
   "dependencies": {
     "@openzeppelin/contracts": "^4.3.2"
